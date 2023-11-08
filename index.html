@@ -1,89 +1,912 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.5.2/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.5.2/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global EXC</title>
+  <link rel="icon" type="image/x-icon" href="./images/bitcoin2.png">
+  <link rel="stylesheet" href="./styles/style.css">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!--navigation section-->
+  <header class="header">
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./images/bitcoin1.png" width="40" height="40" alt="MISSING LOGO">
+        Global EXC
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link " data-nav-link>Homepage</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="https://crypto-app-26b76.web.app/" class="navbar-link" data-nav-link>Invest and trade</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#market" class="navbar-link" data-nav-link>Market value</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <a href="https://global-exc.web.app" class="btn btn-outline">Dashboard</a>
+
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  </header>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+
+
+    <!--landing page-->
+  <main>
+    <article>
+
+    
+
+      <section class="section hero" aria-label="hero" data-section>
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h1 class="h1 hero-title">Buy and invest in bitcoin with GLOBAL EXC.</h1>
+
+            <p class="hero-text">
+              buy investment plans and monitor your profit returns with uptime live monitoring and exchange algorithm
+            </p>
+
+           
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="./images/hero-banner.jfif" width="570" height="448" alt="hero banner" class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+    <!--trend section-->
+
+      <section class="section trend" aria-label="crypto trend" data-section>
+        <div class="container">
+
+          <div class="trend-tab">
+
+            <ul class="tab-nav">
+
+              <li>
+                <button class="tab-btn active">Crypto</button>
+              </li>
+
+              <li>
+                <button class="tab-btn " onclick="update()">DeFi</button>
+              </li>
+
+              <li>
+                <button class="tab-btn" onclick="update()">BSC</button>
+              </li>
+
+              <li>
+                <button class="tab-btn" onclick="update()">NFT</button>
+              </li>
+
+              <li>
+                <button class="tab-btn" onclick="update()">Metaverse</button>
+              </li>
+
+              <li>
+                <button class="tab-btn" onclick="update()">Polkadot</button>
+              </li>
+
+              <li>
+                <button class="tab-btn" onclick="update()">Solana</button>
+              </li>
+
+              <li>
+                <button class="tab-btn" onclick="update()">Opensea</button>
+              </li>
+
+            </ul>
+
+            <ul class="tab-content">
+
+              <li>
+                <div class="trend-card">
+
+                  <div class="card-title-wrapper">
+                    <img src="./images/bitcoin1.png" width="24" height="24" alt="bitcoin logo">
+
+                    <a href="#" class="card-title">
+                      Bitcoin <span class="span">BTC/USD</span>
+                    </a>
+                  </div>
+
+                  <data class="card-value" value="46168.95">USD 30,606.10</data>
+
+                  <div class="card-analytics">
+                    <data class="current-price" value="36641.20">592,170,000,000</data>
+
+                    <div class="badge green">+1.45%</div>
+                  </div>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="trend-card active">
+
+                  <div class="card-title-wrapper">
+                    <img src="./images/ethereum.png" width="24" height="24" alt="ethereum logo">
+
+                    <a href="#" class="card-title">
+                      Ethereum <span class="span">ETH/USD</span>
+                    </a>
+                  </div>
+
+                  <data class="card-value" value="3480.04">USD 1,905.37</data>
+
+                  <div class="card-analytics">
+                    <data class="current-price" value="36641.20">233,770,000,000</data>
+
+                    <div class="badge red">-1.35%</div>
+                  </div>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="trend-card">
+
+                  <div class="card-title-wrapper">
+                    <img src="./images/tether.jfif" width="24" height="24" alt="tether logo">
+
+                    <a href="#" class="card-title">
+                      Tether <span class="span">USDT/USD</span>
+                    </a>
+                  </div>
+
+                  <data class="card-value" value="1.00">USD 1.00</data>
+
+                  <div class="card-analytics">
+                    <data class="current-price" value="36641.20">36,641.20</data>
+
+                    <div class="badge green">+0.01%</div>
+                  </div>
+
+                </div>
+              </li>
+
+              <li>
+                <div class="trend-card">
+
+                  <div class="card-title-wrapper">
+                    <img src="./images/BNB.png" width="24" height="24" alt="bnb logo">
+
+                    <a href="#" class="card-title">
+                      BNB <span class="span">BNB/USD</span>
+                    </a>
+                  </div>
+
+                  <data class="card-value" value="443.56">USD 239.63</data>
+
+                  <div class="card-analytics">
+                    <data class="current-price" value="36641.20">37,290,000,000</data>
+
+                    <div class="badge red">-1.24%</div>
+                  </div>
+
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #MARKET
+      -->
+
+      <section class="section market" aria-label="market update" data-section id="market">
+        <div class="container">
+
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Market Update</h2>
+
+            <a href="#" class="btn-link">See All Coins</a>
+          </div>
+
+          <div class="market-tab">
+
+            <ul class="tab-nav">
+
+              <li>
+                <button class="tab-btn active">Available</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Metaverse</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Entertainment</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Energy</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">NFT</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Gaming</button>
+              </li>
+
+              <li>
+                <button class="tab-btn">Music</button>
+              </li>
+
+            </ul>
+
+            <table class="market-table">
+
+              <thead class="table-head">
+
+                <tr class="table-row table-title">
+
+                  <th class="table-heading"></th>
+
+                  <th class="table-heading" scope="col">#</th>
+
+                  <th class="table-heading" scope="col">Name</th>
+
+                  <th class="table-heading" scope="col">Last Price</th>
+
+                  <th class="table-heading" scope="col">24h %</th>
+
+                  <th class="table-heading" scope="col">Market Cap</th>
+
+                  <th class="table-heading" scope="col">Last 7 Days</th>
+
+                  <th class="table-heading"></th>
+
+                </tr>
+
+              </thead>
+
+              <tbody class="table-body">
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">1</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./images/bitcoin1.png" width="20" height="20" alt="Bitcoin logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Bitcoin <span class="span">BTC</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$30,606.10</td>
+
+                  <td class="table-data last-update green">+1.45%</td>
+
+                  <td class="table-data market-cap">$592,170,000,000</td>
+
+                  <td class="table-data">
+                    <img src="./images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">2</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./images/ethereum.png" width="20" height="20" alt="Ethereum logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Ethereum <span class="span">ETH</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$1,905.37</td>
+
+                  <td class="table-data last-update red">-1.35%</td>
+
+                  <td class="table-data market-cap">$233,770,000,000</td>
+
+                  <td class="table-data">
+                    <img src="./images/chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
+                  </td>
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">3</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./images/tether.jfif" width="20" height="20" alt="Tether logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Tether <span class="span">USDT/USD</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$1.01</td>
+
+                  <td class="table-data last-update green">+0.01%</td>
+
+                  <td class="table-data market-cap">$83,360,000,000</td>
+
+                  <td class="table-data">
+                    <img src="./images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">4</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./images/BNB.png" width="20" height="20" alt="BNB logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">BNB <span class="span">BNB/USD</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$239.63</td>
+
+                  <td class="table-data last-update red">-1.39%</td>
+
+                  <td class="table-data market-cap">$37,290,000,000</td>
+
+                  <td class="table-data">
+                    <img src="./images/chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
+                  </td>
+
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">5</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./images/pi.jfif" width="20" height="20" alt="Pi logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Pi<span class="span">PI/USD</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$22.80</td>
+
+                  <td class="table-data last-update green">+0.02%</td>
+
+                  <td class="table-data market-cap">$250,996</td>
+
+                  <td class="table-data">
+                    <img src="./images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">6</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./images/Doge.png" width="20" height="20" alt="XRP logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Doge<span class="span">USDT</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$0.067</td>
+
+                  <td class="table-data last-update red">-2.22%</td>
+
+                  <td class="table-data market-cap">$9,350,000,000</td>
+
+                  <td class="table-data">
+                    <img src="./images/chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
+                  </td>
+
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">7</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./images/coin-7.svg" width="20" height="20" alt="Cardano logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Cardano <span class="span">ADA</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$0.29</td>
+
+                  <td class="table-data last-update green">+0.8%</td>
+
+                  <td class="table-data market-cap">$10,190,000,000</td>
+
+                  <td class="table-data">
+                    <img src="./images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+
+                </tr>
+
+                <tr class="table-row">
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                      <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                      <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                    </button>
+                  </td>
+
+                  <th class="table-data rank" scope="row">8</th>
+
+                  <td class="table-data">
+                    <div class="wrapper">
+                      <img src="./images/coin-8.svg" width="20" height="20" alt="Avalanche logo" class="img">
+
+                      <h3>
+                        <a href="#" class="coin-name">Avalanche <span class="span">AVAX</span></a>
+                      </h3>
+                    </div>
+                  </td>
+
+                  <td class="table-data last-price">$12.71</td>
+
+                  <td class="table-data last-update green">+1.41%</td>
+
+                  <td class="table-data market-cap">$4,350,000,000</td>
+
+                  <td class="table-data">
+                    <img src="./images/chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+     
+      <!--instructions area-->
+
+      <section class="section instruction" aria-label="instruction" data-section>
+        <div class="container">
+
+          <a href="https://global-exc.web.app/register"><h2 class="h2 section-title" style="color:hsl(40, 72%, 23%); text-decoration: underline;">Get Started</h2>
+          </a>
+          <p class="section-text">
+          With Global EXC crypto trading is made easy with realtime profit monitoring and security.
+          </p>
+
+          <ul class="instruction-list">
+
+      
+            <li>
+              <div class="instruction-card">
+
+                <figure class="card-banner">
+                  <img src="./images/instruction-2.png" width="96" height="96" loading="lazy" alt="Step 1"
+                    class="img">
+                </figure>
+
+                <p class="card-subtitle">Step 1</p>
+
+                <h3 class="h3 card-title">Create An Account</h3>
+
+                <p class="card-text"> Create a free account and log in to your dashboard.
+                    
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="instruction-card">
+
+                <figure class="card-banner">
+                  <img src="./images/instruction-3.png" width="96" height="96" loading="lazy" alt="Step 2"
+                    class="img">
+                </figure>
+
+                <p class="card-subtitle">Step 2</p>
+
+                <h3 class="h3 card-title">Start Trading</h3>
+
+                <p class="card-text">
+                    Buy a crypto plan and invest it.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="instruction-card">
+
+                <figure class="card-banner">
+                  <img src="./images/instruction-4.png" width="96" height="96" loading="lazy" alt="Step 3"
+                    class="img">
+                </figure>
+
+                <p class="card-subtitle">Step 3</p>
+
+                <h3 class="h3 card-title">Earn Money</h3>
+
+                <p class="card-text">
+                    Enjoy maximum profit returns from your investment.
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!--about section-->
+
+      <section class="section about" aria-label="about" data-section>
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="./images/about-banner.png" width="748" height="436" loading="lazy" alt="about banner"
+              class="w-100">
+          </figure>
+
+          <div class="about-content">
+
+            <h2 class="h2 section-title">Assurance</h2>
+
+            <p class="section-text">
+                Be rest assured that your payments are secured and will be reflected on your dashboard with accurate profit returns based on your purchased plan.
+            </p>
+
+            <ul class="section-list">
+
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                  <h3 class="h3 list-title">View real-time cryptocurrency prices</h3>
+                </div>
+
+                <p class="item-text"> Crypto such as bitcoin prices are current to your purchased plan and  will be traded with current stake prices and market value.</p>
+              </li>
+
+              
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #APP
+      -->
+
+      <section class="section app" aria-label="app" data-section>
+        <div class="container">
+
+          <div class="app-content">
+
+            <h2 class="h2 section-title">Free Your Money & Invest With Confident</h2>
+
+            <p class="section-text">
+              With Global EXC Trade, you can be sure your trading skills are matched
+            </p>
+
+            <ul class="section-list">
+
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                  <h3 class="h3 item-title">Buy, Sell, And Trade On The Go</h3>
+                </div>
+
+                <p class="item-text">
+                  Manage Your Holdings From Your Mobile Decive
+                </p>
+              </li>
+
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                  <h3 class="h3 item-title">Take Control Of Your Wealth</h3>
+                </div>
+
+                <p class="item-text">
+                  Rest Assured You (And Only You) Have Access To Your Funds
+                </p>
+              </li>
+
+            </ul>
+
+           
+
+          </div>
+
+          <div class="app-banner">
+            <img src="./images/bitcoin1.png" width="618" height="526" loading="lazy" alt="app banner"
+              class="w-100">
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+<!--footer-->
+
+  <footer class="footer">
+
+    <div class="footer-top" data-section>
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./images/bitcoin1.png" width="50" height="50" alt="Cryptex logo">
+            Global EXC
+          </a>
+
+          <h2 class="footer-title">Bitcoin Trading is current on!</h2>
+
+          <a href="mailto:globalexctrading@gmail.com" class="footer-contact-link">globalexctrading@gmail.com</a>
+
+        
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Products</p>
+          </li>
+
+          <li>
+            <a href="" class="footer-link">Spot</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Inverse Perpetual</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">USDT Perpetual</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Exchange</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Launchpad</a>
+          </li>
+
+          <li>
+            <a href="https://pay.binance.com/en" class="footer-link">Binance Pay</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Services</p>
+          </li>
+
+          <li>
+            <a href="https://global-exc.web.app/register" class="footer-link">Buy Crypto</a>
+          </li>
+
+          <li>
+            <a href="#market" class="footer-link">Markets</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Message us</a>
+          </li>
+
+          <li>
+        
+        </ul>
+
+  
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2023  <a href="#" class="copyright-link">Global EXC Trading</a>
+        </p>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+ 
+  <script src="./scripts/app.js" defer></script>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
 </html>
